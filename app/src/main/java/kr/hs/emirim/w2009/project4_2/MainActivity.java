@@ -2,6 +2,7 @@ package kr.hs.emirim.w2009.project4_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,25 +11,27 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
-    CheckBox checkStart;
+    Switch switchStart;
     RadioGroup rg;
     ImageView imgv;
     LinearLayout linear;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        checkStart = findViewById(R.id.check_start);
+        switchStart = findViewById(R.id.switch_start);
         linear=findViewById(R.id.linear);
         rg=findViewById(R.id.rg);
         imgv = findViewById(R.id.imgv);
         Button btnDone=findViewById(R.id.btn_done);
 
-        checkStart.setOnCheckedChangeListener(checkListener);
+        switchStart.setOnCheckedChangeListener(checkListener);
         btnDone.setOnClickListener(btnListener);
 
 
